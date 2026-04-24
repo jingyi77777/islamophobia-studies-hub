@@ -26,6 +26,10 @@ export default function Footer() {
               A group project examining how the French Republic's interpretation of laïcité
               structures anti-Muslim discrimination as a state-sanctioned practice.
             </p>
+            <p className="text-primary-foreground/40 text-xs mt-2">
+              ASAMST 132AC — Islamophobia and Constructing Otherness<br />
+              American Cultures · Spring 2026 · Instructor: Dr. Hatem Bazian
+            </p>
           </div>
 
           <div>
