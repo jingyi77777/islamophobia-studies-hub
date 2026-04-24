@@ -125,7 +125,7 @@ export default function HeroSection() {
           transition={{ delay: 0.8 }}
           className="mt-14 text-center"
         >
-          <p className="text-white/50 text-xs uppercase tracking-widest mb-4">Research Team — Group 1</p>
+          <p className="text-white/50 text-xs uppercase tracking-widest mb-4">Research Team</p>
           <div className="flex flex-wrap justify-center gap-3">
             {teamMembers.map((member, i) => (
               <div key={i} className="flex items-center gap-2 bg-white/10 border border-white/15 rounded-lg px-4 py-2">
