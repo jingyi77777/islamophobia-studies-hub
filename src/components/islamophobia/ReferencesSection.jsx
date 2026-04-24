@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, FileText, Newspaper, BarChart3, Filter } from "lucide-react";
+import { BookOpen, FileText, Newspaper, BarChart3, Filter, Gavel, Globe } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import { references } from "@/lib/siteData";
 
-const typeIcons = {
-  Book: BookOpen,
-  Report: FileText,
-  "Journal Article": Newspaper,
-  "Survey Report": BarChart3,
-  "Government Report": FileText,
-};
-
-const typeColors = {
-  Book: "bg-primary/10 text-primary",
-  Report: "bg-accent/10 text-accent",
-  "Journal Article": "bg-chart-3/10 text-chart-3",
-  "Survey Report": "bg-chart-4/10 text-chart-4",
-  "Government Report": "bg-chart-5/10 text-chart-5",
+const typeConfig = {
+  Book: { icon: BookOpen, color: "bg-primary/10 text-primary" },
+  Report: { icon: FileText, color: "bg-accent/10 text-accent" },
+  "Journal Article": { icon: Newspaper, color: "bg-chart-3/10 text-chart-3" },
+  "Survey Report": { icon: BarChart3, color: "bg-chart-4/10 text-chart-4" },
+  "Government Report": { icon: FileText, color: "bg-chart-2/10 text-chart-2" },
+  "Legal Document": { icon: Gavel, color: "bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400" },
+  "UN Document": { icon: Globe, color: "bg-chart-5/10 text-chart-5" },
 };
 
 export default function ReferencesSection() {
@@ -26,15 +20,17 @@ export default function ReferencesSection() {
 
   const filtered = activeType === "All" ? references : references.filter((r) => r.type === activeType);
 
+  // Generate APA citation number
+  const sortedRefs = [...references].sort((a, b) => a.author.localeCompare(b.author));
+
   return (
     <SectionWrapper
       id="references"
-      title="References"
-      subtitle="Academic sources, reports, and publications referenced throughout this research project."
+      title="Works Cited"
+      subtitle="All sources cited in APA format. Filter by source type using the buttons below."
     >
-      {/* Filter tabs */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        <Filter className="w-4 h-4 text-muted-foreground mt-2" />
+      <div className="flex flex-wrap gap-2 mb-8 items-center">
+        <Filter className="w-4 h-4 text-muted-foreground" />
         {types.map((type) => (
           <button
             key={type}
@@ -46,35 +42,35 @@ export default function ReferencesSection() {
             }`}
           >
             {type}
+            <span className="ml-1.5 text-xs opacity-60">
+              ({type === "All" ? references.length : references.filter((r) => r.type === type).length})
+            </span>
           </button>
         ))}
       </div>
 
-      {/* Reference list */}
       <div className="space-y-3">
         {filtered.map((ref, i) => {
-          const Icon = typeIcons[ref.type] || FileText;
-          const colorClass = typeColors[ref.type] || "bg-muted text-muted-foreground";
+          const config = typeConfig[ref.type] || { icon: FileText, color: "bg-muted text-muted-foreground" };
+          const Icon = config.icon;
           return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: i * 0.05 }}
-              className="bg-card rounded-xl border border-border p-5 hover:shadow-md hover:border-accent/20 transition-all duration-300 group"
+              transition={{ duration: 0.3, delay: i * 0.04 }}
+              className="bg-card rounded-xl border border-border p-4 md:p-5 hover:shadow-md hover:border-accent/20 transition-all group"
             >
               <div className="flex items-start gap-4">
-                <div className={`w-10 h-10 rounded-lg ${colorClass} flex items-center justify-center shrink-0`}>
-                  <Icon className="w-5 h-5" />
+                <div className={`w-9 h-9 rounded-lg ${config.color} flex items-center justify-center shrink-0 mt-0.5`}>
+                  <Icon className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-foreground font-medium group-hover:text-accent transition-colors">
-                    {ref.author} ({ref.year}).{" "}
-                    <em>{ref.title}</em>.{" "}
-                    <span className="text-muted-foreground">{ref.source}.</span>
+                  <p className="text-sm text-foreground leading-relaxed">
+                    {ref.author} ({ref.year}). <em>{ref.title}</em>. {ref.source}.
                   </p>
-                  <span className={`inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium ${colorClass}`}>
+                  <span className={`inline-block mt-2 px-2.5 py-0.5 rounded-full text-xs font-medium ${config.color}`}>
                     {ref.type}
                   </span>
                 </div>
@@ -85,7 +81,7 @@ export default function ReferencesSection() {
       </div>
 
       <p className="mt-6 text-sm text-muted-foreground text-center">
-        {filtered.length} of {references.length} references shown
+        Showing {filtered.length} of {references.length} references · Citation format: APA 7th Edition
       </p>
     </SectionWrapper>
   );
