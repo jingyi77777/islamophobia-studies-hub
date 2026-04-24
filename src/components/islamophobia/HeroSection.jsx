@@ -33,7 +33,7 @@ export default function HeroSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/80 text-sm font-medium mb-8 border border-white/20">
             <BookOpen className="w-4 h-4" />
-            Academic Research Project · Spring 2025
+            Academic Research Project · Spring 2025 · Group 1
           </div>
 
           <h1 className="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
@@ -77,8 +77,21 @@ export default function HeroSection() {
             </button>
           </div>
 
+          {/* Course readings note */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mt-8 max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-xl p-4 text-left"
+          >
+            <p className="text-xs font-bold uppercase tracking-widest text-accent/80 mb-1.5">Course Readings Applied</p>
+            <p className="text-white/60 text-xs leading-relaxed">
+              Said's <em>Orientalism</em> (1978) · Omi & Winant Racial Formation (1986) · Cainkar Social Construction (2006) · Ali, Shariah & Citizenship (2012) · CAIR-CA Bullying Report (2015) · Noor, War on Terror (2006) · ISPU Equal Treatment (2018) · Abu-Zayd, From Phobia to Understanding (2010) · Runnymede Trust (1997)
+            </p>
+          </motion.div>
+
           {/* Stats row */}
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               { icon: Globe, label: "Country Focus", val: "France" },
               { icon: BookOpen, label: "Sources Cited", val: "25+" },

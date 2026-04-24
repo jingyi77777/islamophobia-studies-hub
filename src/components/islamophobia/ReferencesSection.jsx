@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, FileText, Newspaper, BarChart3, Filter, Gavel, Globe } from "lucide-react";
+import { BookOpen, FileText, Newspaper, BarChart3, Filter, Gavel, Globe, GraduationCap } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import { references } from "@/lib/siteData";
 
@@ -12,6 +12,8 @@ const typeConfig = {
   "Government Report": { icon: FileText, color: "bg-chart-2/10 text-chart-2" },
   "Legal Document": { icon: Gavel, color: "bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400" },
   "UN Document": { icon: Globe, color: "bg-chart-5/10 text-chart-5" },
+  "Lecture": { icon: GraduationCap, color: "bg-accent/10 text-accent" },
+  "Book Chapter": { icon: BookOpen, color: "bg-primary/10 text-primary" },
 };
 
 export default function ReferencesSection() {

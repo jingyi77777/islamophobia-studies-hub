@@ -28,6 +28,19 @@ export default function IslamophobiaSection() {
         <p className="mt-4 text-primary-foreground/50 text-sm">— Drawing on Hajjat & Mohammed, <em>Islamophobie</em> (2013)</p>
       </motion.div>
 
+      {/* Course materials callout */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-10"
+      >
+        <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">Course Materials Applied</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          This section draws directly on our course readings: <strong className="text-foreground">Said's <em>Orientalism</em> (1978)</strong> for the construction of the Muslim 'Other'; <strong className="text-foreground">Omi & Winant's Racial Formation Theory (1986)</strong> for structural racialization; <strong className="text-foreground">Cainkar's Social Construction of Difference (2006)</strong> for comparative Arab/Muslim racialization; <strong className="text-foreground">Ali's Shariah and Citizenship (2012)</strong> for citizenship deprivation; <strong className="text-foreground">the CAIR-CA Bullying Report (2015)</strong> for institutional discrimination; <strong className="text-foreground">Noor's War on Terror (2006)</strong> for global Islamophobia; and <strong className="text-foreground">the ISPU Equal Treatment Report (2018)</strong> for differential legal treatment. The course lecture on "Racism Properly Understood" (individual/institutional/structural) provides the organizing framework.
+        </p>
+      </motion.div>
+
       {/* Three frameworks */}
       <div className="space-y-5 mb-12">
         {islamophobiaFramework.manifestations.map((item, i) => (
