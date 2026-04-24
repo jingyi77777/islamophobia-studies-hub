@@ -12,10 +12,9 @@ export const navLinks = [
 ];
 
 export const teamMembers = [
-  { name: "Aaliyah Mensah", role: "Lead Researcher" },
-  { name: "Tariq El-Amin", role: "Policy Analyst" },
-  { name: "Sophie Tremblay", role: "Media & Culture" },
-  { name: "Yusuf Okonkwo", role: "Legal & Economic Analysis" },
+  { name: "Jin Huang", role: "Group 1" },
+  { name: "Noah Seo", role: "Group 1" },
+  { name: "Steven Peng", role: "Group 1" },
 ];
 
 // Country Profile
