@@ -49,7 +49,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-semibold text-xs uppercase tracking-wider mb-4 text-primary-foreground/60">
-              Research Team — Group 1
+              Research Team
             </h4>
             <div className="space-y-2.5">
               {teamMembers.map((member, i) => (
@@ -69,7 +69,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/40 text-sm">
-            © {new Date().getFullYear()} Group 1 — Academic Research Project. All sources cited in APA format.
+            © {new Date().getFullYear()} Academic Research Project. All sources cited in APA format.
           </p>
           <div className="flex items-center gap-1.5 text-primary-foreground/40 text-sm">
             <BookOpen className="w-4 h-4" />

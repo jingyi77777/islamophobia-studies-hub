@@ -12,9 +12,9 @@ export const navLinks = [
 ];
 
 export const teamMembers = [
-  { name: "Jin Huang", role: "Group 1" },
-  { name: "Noah Seo", role: "Group 1" },
-  { name: "Steven Peng", role: "Group 1" },
+  { name: "Jin Huang", role: "ASAMST 132AC" },
+  { name: "Noah Seo", role: "ASAMST 132AC" },
+  { name: "Steven Peng", role: "ASAMST 132AC" },
 ];
 
 // Country Profile
