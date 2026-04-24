@@ -34,10 +34,10 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/80 text-sm font-medium border border-white/20">
               <BookOpen className="w-4 h-4" />
-              Academic Research Project · Group 1
+              Islamophobia and Constructing Otherness
             </div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium border border-accent/30">
-              ASAMST 132AC · American Cultures · Spring 2026
+              ASAMST 132AC · American Cultures · Spring 2026 · Dr. Hatem Bazian
             </div>
           </div>
 
