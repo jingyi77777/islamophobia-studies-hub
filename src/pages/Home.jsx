@@ -10,6 +10,7 @@ import SurveillanceSection from "@/components/islamophobia/SurveillanceSection";
 import MediaSection from "@/components/islamophobia/MediaSection";
 import CounterSection from "@/components/islamophobia/CounterSection";
 import ReferencesSection from "@/components/islamophobia/ReferencesSection";
+import ConclusionSection from "@/components/islamophobia/ConclusionSection";
 import Footer from "@/components/islamophobia/Footer";
 
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
         <CounterSection />
       </div>
       <ReferencesSection />
+      <ConclusionSection />
       <Footer />
     </div>
   );

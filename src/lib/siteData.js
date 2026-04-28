@@ -9,6 +9,7 @@ export const navLinks = [
   { label: "Media & Culture", href: "media" },
   { label: "Counter-Movements", href: "counter" },
   { label: "References", href: "references" },
+  { label: "Conclusion", href: "conclusion" },
 ];
 
 export const teamMembers = [
